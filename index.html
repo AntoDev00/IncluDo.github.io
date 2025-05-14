@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IncluDO - Sistema di Formazione</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="module">
+        // Importiamo il codice TypeScript
+        import { Partecipante } from './src/partecipante.js';
+        import { Corso } from './src/corso.js';
+        import { Azienda } from './src/azienda.js';
+
+        // Codice di esempio
+        const partecipante1 = new Partecipante(
+            'Ahmed',
+            'Mohammed',
+            'Egitto',
+            'Laurea',
+            ['Arabo', 'Inglese'],
+            'Artigianato'
+        );
+
+        const corsoArtigianato = new Corso(
+            'Artigianato Tradizionale',
+            'Corso di formazione per l\'apprendimento delle tecniche artigianali locali',
+            'Artigianato',
+            6
+        );
+
+        const bottegaArtigiana = new Azienda(
+            'Bottega del Maestro',
+            'Artigianato',
+            'Bottega specializzata in lavorazioni artigianali tradizionali',
+            ['Apprendista Artigiano', 'Artigiano Junior']
+        );
+
+        // Iscriviamo il partecipante al corso
+        partecipante1.iscrivitiCorso(corsoArtigianato);
+
+        // Offriamo una posizione
+        bottegaArtigiana.offriPosizione(partecipante1, 'Apprendista Artigiano');
+
+        // Stampa i risultati
+        console.log('Partecipante:', partecipante1);
+        console.log('Corso:', corsoArtigianato);
+        console.log('Azienda:', bottegaArtigiana);
+    </script>
+</body>
+</html>
